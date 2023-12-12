@@ -5,9 +5,11 @@ import { ResponseInterceptor } from './commons/interceptors/response.interceptor
 import { RpcLoggerInterceptor } from './commons/interceptors/logger.interceptor'
 import { RpcExceptionFilter } from './commons/filters/rpc-exception.filter'
 import { RabbitMQModule } from './modules/publisher/rabbit.module'
+import { NotificationsModule } from './modules/notification/notifications.module'
+import { EmailModule } from './modules/email-sender/email.module'
 
 @Module({
-  imports: [RabbitMQModule],
+  imports: [RabbitMQModule, NotificationsModule, EmailModule],
   controllers: [],
   providers: [
     {
